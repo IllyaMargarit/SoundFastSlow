@@ -138,10 +138,13 @@
     if ([segue.identifier isEqualToString:@"show player"]) {
         PlaySoundViewController *pvc = (PlaySoundViewController*)segue.destinationViewController;
         RecordedAudio *recordedAudio = [[RecordedAudio alloc] init];
-        recordedAudio.fileURL = recorder.url.lastPathComponent;
+        recordedAudio.fileURL = recorder.url;
+        recordedAudio.title = recorder.url.lastPathComponent;
         pvc.recordedAudio = recordedAudio;
     }
 }
+
+
 
 
 
